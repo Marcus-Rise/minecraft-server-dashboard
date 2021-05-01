@@ -1,0 +1,3 @@
+const RCON_CLIENT_CONFIG = Symbol("RCON_CLIENT_CONFIG");
+
+export { RCON_CLIENT_CONFIG };
