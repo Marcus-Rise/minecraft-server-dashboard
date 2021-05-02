@@ -5,7 +5,7 @@ import { injectable } from "inversify";
 class RconClientConfig implements IRconClientConfig {
   readonly host: string = process.env.RCON_HOST ?? "localhost";
   readonly password: string = process.env.RCON_PASSWORD ?? "password";
-  readonly port: number = Number(process.env.RCON_PORT ?? 8080);
+  readonly port: number = Number(process.env.RCON_PORT ?? 25575);
 }
 
 export { RconClientConfig };
