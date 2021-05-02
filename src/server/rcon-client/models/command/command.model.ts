@@ -75,10 +75,12 @@
  * /xp -> experience
  */
 class CommandModel {
-  constructor(public name: string, public args: Array<string | number>) {}
+  constructor(public name: string, public args?: Array<string | number>) {}
 
   toString(): string {
-    return `${this.name} ${this.args.join(" ")}`;
+    const args = this.args?.join(" ") ?? "";
+
+    return (this.name + " " + args).trim();
   }
 }
 
