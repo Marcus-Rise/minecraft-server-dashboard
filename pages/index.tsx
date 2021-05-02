@@ -21,6 +21,9 @@ export default function Home() {
     const response = await fetch("/api/hello", {
       method: "POST",
       body: JSON.stringify(dto),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
     const text = await response.text();
 

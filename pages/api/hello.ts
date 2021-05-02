@@ -3,7 +3,7 @@ import type { IRconClientService } from "../../src/server";
 import { inject, RCON_CLIENT_SERVICE, MessageCommandModel } from "../../src/server";
 
 const Test: NextApiHandler = async (req, res, rconClient = inject<IRconClientService>(RCON_CLIENT_SERVICE)) => {
-  const { target, message } = JSON.parse(req.body);
+  const { target, message } = req.body;
 
   await rconClient.connect();
 
