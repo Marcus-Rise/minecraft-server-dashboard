@@ -2,13 +2,12 @@ POST {{host}}/hello
 Content-Type: application/json;charset=UTF-8
 
 {
-  "message": "aaaa",
-  "target": "awd"
+  "target": "{{target}}",
+  "message": "awd"
 }
 
 > {% client.test("status ok with result", function() {
   client.assert(response.status === 200);
-  client.assert(response.body === "No player was found");
 }) %}
 
 ###
