@@ -12,7 +12,7 @@ services:
       OVERRIDE_SERVER_PROPERTIES: 'true'
       EULA: "TRUE"
     env_file:
-      - .env.local
+      - .env
 
 volumes:
   mc:
