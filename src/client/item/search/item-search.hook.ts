@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import type { Item } from "../../../common";
 
 interface ItemSearchDto {
@@ -8,7 +8,7 @@ interface ItemSearchDto {
 const useItemSearch = () => {
   const [result, setResult] = useState<Item[] | null>([]);
 
-  const sendQuery = async ({ query }: ItemSearchDto) => {
+  const sendQuery = useCallback(async ({ query }: ItemSearchDto) => {
     const searchParams = new URLSearchParams();
     searchParams.append("title", query);
 
@@ -19,7 +19,7 @@ const useItemSearch = () => {
         console.error(e);
         setResult(null);
       });
-  };
+  }, []);
 
   return { result, sendQuery };
 };
