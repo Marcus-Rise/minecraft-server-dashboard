@@ -1,0 +1,3 @@
+const WIKI_API_CONFIG = Symbol("WIKI_API_CONFIG_PROVIDER");
+
+export { WIKI_API_CONFIG };

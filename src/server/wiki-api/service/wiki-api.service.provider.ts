@@ -1,0 +1,3 @@
+const WIKI_API_SERVICE = Symbol("WIKI_API_SERVICE_PROVIDER");
+
+export { WIKI_API_SERVICE };
