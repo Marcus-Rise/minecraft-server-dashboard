@@ -16,7 +16,9 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => (
         </ul>
       </nav>
     </header>
-    <Component {...pageProps} />
+    <main>
+      <Component {...pageProps} />
+    </main>
   </>
 );
 
