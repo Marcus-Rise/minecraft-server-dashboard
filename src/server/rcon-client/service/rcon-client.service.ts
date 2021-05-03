@@ -23,7 +23,7 @@ class RconClientService implements IRconClientService {
 
   async send(command: CommandModel): Promise<string> {
     if (!this.connection) {
-      throw new Error();
+      throw new Error("No connection");
     }
 
     return this.connection?.send(command.toString());
