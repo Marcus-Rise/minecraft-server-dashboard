@@ -36,7 +36,14 @@ class WikiApiService implements IWikiApiService {
       .page(articleTitle)
       .then(async (page) => {
         const images = await page.images();
-        const imageName = WikiApiImageNameFromArticleTitleHelper(articleTitle);
+        let imageName: string;
+
+        if (lang === LangEnum.ru) {
+          imageName = encodeURI(WikiApiImageNameFromArticleTitleHelper(articleTitle));
+        } else {
+          imageName = WikiApiImageNameFromArticleTitleHelper(articleTitle);
+        }
+
         const image = images.filter((i) => i.includes(imageName))[0];
         const description = await page.summary();
         const link = await page.url();
